@@ -1,0 +1,310 @@
+@import "normalize";
+@import "layout";
+@import "elements";
+@import "slick";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i');
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-Bold.woff2') format('woff2'),
+		url('../fonts/Gotham-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/GothamMedium.woff2') format('woff2'),
+		url('../fonts/GothamMedium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-Book.woff2') format('woff2'),
+		url('../fonts/Gotham-Book.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$Gotham: 'Gotham',
+sans-serif;
+$Open: 'Open Sans',
+sans-serif;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font: 400 18px/1.66 $Gotham;
+	color: rgba(74, 85, 98, 0.5);
+}
+
+/* Layout */
+.ba-container {
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 1200px;
+	position: relative;
+}
+
+#map {
+	height: 500px;
+}
+
+.ba-hidden {
+	display: none;
+}
+
+.ba-header {
+	z-index: 2;
+	padding: 53px 25px 0 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	color: white;
+
+	ul {
+		height: 64px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		text-transform: uppercase;
+		align-items: center;
+
+		li,
+		a {
+			color: inherit;
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	&__links {
+		position: relative;
+		top: -3px;
+		width: 545px;
+		font-size: 14px;
+
+		li {
+			position: relative;
+
+			:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 5px;
+				left: -23px;
+				height: 9px;
+				width: 9px;
+				border-radius: 5px;
+				border: 1px solid white;
+			}
+
+			:hover:before {
+				background-color: white;
+			}
+		}
+	}
+
+	&__social {
+		position: relative;
+		top: -4px;
+
+		li+li {
+			padding-left: 20px;
+		}
+
+		li a {
+			border: 1px solid rgba(255, 255, 255, .4);
+			border-radius: 130px;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:hover {
+				border: 1px solid white;
+			}
+		}
+	}
+}
+
+.ba-mainSlider {
+
+	&__slide {
+		background: lightblue url(../img/header.jpg);
+		background-size: cover;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	&__text {
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		transform: translateY(37.5vh);
+		margin-left: -11px;
+
+		h2 {
+			font-size: 80px;
+			font-weight: 700;
+			line-height: 1;
+			margin: 0;
+			letter-spacing: 0.05em;
+			position: relative;
+			margin-top: -1px;
+		}
+
+		p {
+			letter-spacing: 0.30em;
+		}
+
+	}
+
+	&__dots {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: absolute;
+		top: 29.2%;
+		right: 40px;
+
+		li {
+			padding-bottom: 20px;
+		}
+
+		.slick-active button {
+			background-color: white;
+		}
+
+		button {
+			font-size: 0;
+			outline: none;
+			padding: 0;
+			width: 9px;
+			height: 9px;
+			background: transparent;
+			border-radius: 5px;
+			border: 1px solid white;
+
+			&:hover {
+				background-color: white;
+			}
+		}
+	}
+
+	&__scroll {
+		position: absolute;
+		color: white;
+		bottom: 220px;
+		left: 50%;
+		transform: translateX(-76%);
+		border: 1px solid rgba(255, 255, 255, .4);
+		border-radius: 25px;
+		height: 38px;
+		width: 38px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			border: 1px solid white;
+
+		}
+	}
+}
+
+.ba-footer {
+	background: lightblue url(../img/footer-bg.jpg);
+	background-size: cover;
+	height: 524px;
+	color: white;
+
+	&-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 38px;
+
+		&__social {
+			padding-right: 20px;
+
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+
+				li,
+				a {
+					color: inherit;
+					padding: 0;
+					margin: 0;
+				}
+
+				a {
+					text-decoration: none;
+				}
+			}
+
+			li+li {
+				padding-left: 20px;
+			}
+
+			li a {
+				border: 1px solid rgba(255, 255, 255, .4);
+				border-radius: 130px;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				&:hover {
+					border: 1px solid white;
+				}
+			}
+
+		}
+	}
+
+	&-subbox {
+		font-size: 14px;
+
+		p {
+			display: inline;
+		}
+
+		p+p {
+			padding-left: 13px;
+		}
+
+		p+p:before {
+			content: '|';
+			display: inline-block;
+			width: 22px;
+		}
+
+	}
+
+	.ba-container {
+		padding: 204px 0px 0 0;
+	}
+
+	.ba-center {
+		justify-content: center;
+	}
+}
